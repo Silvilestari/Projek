@@ -211,25 +211,25 @@ if (isset($_POST['beli'])) {
                 "<br> Kembalian Rp." . $this->kembalian;
 
             } elseif ($this->money < $this->bayar) {
-              $sisa = $this->money - $this->bayar;
+              $sisa = $this->bayar - $this->money;
               $this->kembalian = $sisa;
 
               return "<br>Uang anda Rp." . $this->money .
               "<br> Kurang Rp." . $this->kembalian;
 
             } elseif ($this->money > $this->diskon) {
-                $sisa2 = $this->money - $this->diskon;
+                $sisa2 =  $this->bayar - $this->money; 
                 $this->kembalian = $sisa2;
 
                 return "<br>Uang anda Rp." . $this->money .
-                "<br> Kembalian Rp." . $this->kurang;
+                "<br> Kembalian Rp." . $this->kembalian;
 
             } elseif ($this->money > $this->diskon) {
-              $sisa2 = $this->money - $this->diskon;
+              $sisa2 = $this->bayar - $this->money;
               $this->kembalian = $sisa2;
 
               return "<br>Uang anda Rp." . $this->money .
-              "<br> Kurang Rp." . $this->kurang;
+              "<br> Kurang Rp." . $this->kembalian;
         }
       }
 
